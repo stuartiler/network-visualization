@@ -1,0 +1,2491 @@
+{
+  "nodes": [
+    {
+      "id": "111CA",
+      "name": "Farms",
+      "upstreamness": 2.26
+    },
+    {
+      "id": "113FF",
+      "name": "Forestry, fishing, and related activities",
+      "upstreamness": 3.28
+    },
+    {
+      "id": "211",
+      "name": "Oil and gas extraction",
+      "upstreamness": 3.3
+    },
+    {
+      "id": "212",
+      "name": "Mining, except oil and gas",
+      "upstreamness": 3.88
+    },
+    {
+      "id": "213",
+      "name": "Support activities for mining",
+      "upstreamness": 4.5
+    },
+    {
+      "id": "22",
+      "name": "Utilities",
+      "upstreamness": 2.45
+    },
+    {
+      "id": "23",
+      "name": "Construction",
+      "upstreamness": 2.93
+    },
+    {
+      "id": "321",
+      "name": "Wood products",
+      "upstreamness": 3.66
+    },
+    {
+      "id": "327",
+      "name": "Nonmetallic mineral products",
+      "upstreamness": 3.47
+    },
+    {
+      "id": "331",
+      "name": "Primary metals",
+      "upstreamness": 4.26
+    },
+    {
+      "id": "332",
+      "name": "Fabricated metal products",
+      "upstreamness": 3.5
+    },
+    {
+      "id": "333",
+      "name": "Machinery",
+      "upstreamness": 3.67
+    },
+    {
+      "id": "334",
+      "name": "Computer and electronic products",
+      "upstreamness": 2.53
+    },
+    {
+      "id": "335",
+      "name": "Electrical equipment, appliances, and components",
+      "upstreamness": 2.79
+    },
+    {
+      "id": "3361MV",
+      "name": "Motor vehicles, bodies and trailers, and parts",
+      "upstreamness": 2.27
+    },
+    {
+      "id": "3364OT",
+      "name": "Other transportation equipment",
+      "upstreamness": 2.78
+    },
+    {
+      "id": "337",
+      "name": "Furniture and related products",
+      "upstreamness": 1.78
+    },
+    {
+      "id": "339",
+      "name": "Miscellaneous manufacturing",
+      "upstreamness": 1.44
+    },
+    {
+      "id": "311FT",
+      "name": "Food and beverage and tobacco products",
+      "upstreamness": 1.51
+    },
+    {
+      "id": "313TT",
+      "name": "Textile mills and textile product mills",
+      "upstreamness": 1.98
+    },
+    {
+      "id": "315AL",
+      "name": "Apparel and leather and allied products",
+      "upstreamness": 1.12
+    },
+    {
+      "id": "322",
+      "name": "Paper products",
+      "upstreamness": 2.91
+    },
+    {
+      "id": "323",
+      "name": "Printing and related support activities",
+      "upstreamness": 2.86
+    },
+    {
+      "id": "324",
+      "name": "Petroleum and coal products",
+      "upstreamness": 2.26
+    },
+    {
+      "id": "325",
+      "name": "Chemical products",
+      "upstreamness": 2.19
+    },
+    {
+      "id": "326",
+      "name": "Plastics and rubber products",
+      "upstreamness": 2.92
+    },
+    {
+      "id": "42",
+      "name": "Wholesale trade",
+      "upstreamness": 3.96
+    },
+    {
+      "id": "441",
+      "name": "Motor vehicle and parts dealers",
+      "upstreamness": 1.0
+    },
+    {
+      "id": "445",
+      "name": "Food and beverage stores",
+      "upstreamness": 1.0
+    },
+    {
+      "id": "452",
+      "name": "General merchandise stores",
+      "upstreamness": 1.0
+    },
+    {
+      "id": "4A0",
+      "name": "Other retail",
+      "upstreamness": 1.22
+    },
+    {
+      "id": "481",
+      "name": "Air transportation",
+      "upstreamness": 1.95
+    },
+    {
+      "id": "482",
+      "name": "Rail transportation",
+      "upstreamness": 3.05
+    },
+    {
+      "id": "483",
+      "name": "Water transportation",
+      "upstreamness": 1.29
+    },
+    {
+      "id": "484",
+      "name": "Truck transportation",
+      "upstreamness": 2.43
+    },
+    {
+      "id": "485",
+      "name": "Transit and ground passenger transportation",
+      "upstreamness": 2.03
+    },
+    {
+      "id": "486",
+      "name": "Pipeline transportation",
+      "upstreamness": 4.3
+    },
+    {
+      "id": "487OS",
+      "name": "Other transportation and support activities",
+      "upstreamness": 3.5
+    },
+    {
+      "id": "493",
+      "name": "Warehousing and storage",
+      "upstreamness": 3.11
+    },
+    {
+      "id": "511",
+      "name": "Publishing industries, except internet (includes software)",
+      "upstreamness": 1.53
+    },
+    {
+      "id": "512",
+      "name": "Motion picture and sound recording industries",
+      "upstreamness": 2.42
+    },
+    {
+      "id": "513",
+      "name": "Broadcasting and telecommunications",
+      "upstreamness": 2.09
+    },
+    {
+      "id": "514",
+      "name": "Data processing, internet publishing, and other information services",
+      "upstreamness": 2.72
+    },
+    {
+      "id": "521CI",
+      "name": "Federal Reserve banks, credit intermediation, and related activities",
+      "upstreamness": 2.47
+    },
+    {
+      "id": "523",
+      "name": "Securities, commodity contracts, and investments",
+      "upstreamness": 2.0
+    },
+    {
+      "id": "524",
+      "name": "Insurance carriers and related activities",
+      "upstreamness": 2.53
+    },
+    {
+      "id": "525",
+      "name": "Funds, trusts, and other financial vehicles",
+      "upstreamness": 1.23
+    },
+    {
+      "id": "HS",
+      "name": "Housing",
+      "upstreamness": 1.0
+    },
+    {
+      "id": "ORE",
+      "name": "Other real estate",
+      "upstreamness": 3.16
+    },
+    {
+      "id": "532RL",
+      "name": "Rental and leasing services and lessors of intangible assets",
+      "upstreamness": 2.93
+    },
+    {
+      "id": "5411",
+      "name": "Legal services",
+      "upstreamness": 2.69
+    },
+    {
+      "id": "5415",
+      "name": "Computer systems design and related services",
+      "upstreamness": 3.21
+    },
+    {
+      "id": "5412OP",
+      "name": "Miscellaneous professional, scientific, and technical services",
+      "upstreamness": 3.3
+    },
+    {
+      "id": "55",
+      "name": "Management of companies and enterprises",
+      "upstreamness": 3.45
+    },
+    {
+      "id": "561",
+      "name": "Administrative and support services",
+      "upstreamness": 3.28
+    },
+    {
+      "id": "562",
+      "name": "Waste management and remediation services",
+      "upstreamness": 2.64
+    },
+    {
+      "id": "61",
+      "name": "Educational services",
+      "upstreamness": 1.15
+    },
+    {
+      "id": "621",
+      "name": "Ambulatory health care services",
+      "upstreamness": 1.04
+    },
+    {
+      "id": "622",
+      "name": "Hospitals",
+      "upstreamness": 1.0
+    },
+    {
+      "id": "623",
+      "name": "Nursing and residential care facilities",
+      "upstreamness": 1.01
+    },
+    {
+      "id": "624",
+      "name": "Social assistance",
+      "upstreamness": 1.0
+    },
+    {
+      "id": "711AS",
+      "name": "Performing arts, spectator sports, museums, and related activities",
+      "upstreamness": 2.22
+    },
+    {
+      "id": "713",
+      "name": "Amusements, gambling, and recreation industries",
+      "upstreamness": 1.06
+    },
+    {
+      "id": "721",
+      "name": "Accommodation",
+      "upstreamness": 1.76
+    },
+    {
+      "id": "722",
+      "name": "Food services and drinking places",
+      "upstreamness": 1.5
+    },
+    {
+      "id": "81",
+      "name": "Other services, except government",
+      "upstreamness": 1.67
+    },
+    {
+      "id": "GFGD",
+      "name": "Federal general government (defense)",
+      "upstreamness": 1.0
+    },
+    {
+      "id": "GFGN",
+      "name": "Federal general government (nondefense)",
+      "upstreamness": 1.0
+    },
+    {
+      "id": "GFE",
+      "name": "Federal government enterprises",
+      "upstreamness": 3.25
+    },
+    {
+      "id": "GSLG",
+      "name": "State and local general government",
+      "upstreamness": 1.0
+    },
+    {
+      "id": "GSLE",
+      "name": "State and local government enterprises",
+      "upstreamness": 1.61
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "111CA",
+      "suppliers": [
+        "113FF",
+        "311FT",
+        "325",
+        "ORE"
+      ],
+      "percentages": [
+        0.091,
+        0.19,
+        0.14,
+        0.117
+      ]
+    },
+    {
+      "id": "113FF",
+      "suppliers": [
+        "111CA",
+        "325",
+        "524",
+        "5412OP"
+      ],
+      "percentages": [
+        0.044,
+        0.175,
+        0.053,
+        0.042
+      ]
+    },
+    {
+      "id": "211",
+      "suppliers": [
+        "213",
+        "333",
+        "325",
+        "55"
+      ],
+      "percentages": [
+        0.09,
+        0.073,
+        0.051,
+        0.109
+      ]
+    },
+    {
+      "id": "212",
+      "suppliers": [
+        "22",
+        "333",
+        "324",
+        "55"
+      ],
+      "percentages": [
+        0.078,
+        0.098,
+        0.088,
+        0.073
+      ]
+    },
+    {
+      "id": "213",
+      "suppliers": [
+        "333",
+        "324",
+        "524",
+        "532RL",
+        "5412OP"
+      ],
+      "percentages": [
+        0.109,
+        0.059,
+        0.063,
+        0.075,
+        0.169
+      ]
+    },
+    {
+      "id": "22",
+      "suppliers": [
+        "211",
+        "212",
+        "324",
+        "561"
+      ],
+      "percentages": [
+        0.158,
+        0.081,
+        0.095,
+        0.076
+      ]
+    },
+    {
+      "id": "23",
+      "suppliers": [
+        "327",
+        "332",
+        "335",
+        "324",
+        "5412OP"
+      ],
+      "percentages": [
+        0.124,
+        0.148,
+        0.078,
+        0.076,
+        0.08
+      ]
+    },
+    {
+      "id": "321",
+      "suppliers": [
+        "113FF",
+        "22",
+        "332",
+        "325"
+      ],
+      "percentages": [
+        0.239,
+        0.027,
+        0.046,
+        0.044
+      ]
+    },
+    {
+      "id": "327",
+      "suppliers": [
+        "212",
+        "22",
+        "332",
+        "325"
+      ],
+      "percentages": [
+        0.179,
+        0.054,
+        0.05,
+        0.074
+      ]
+    },
+    {
+      "id": "331",
+      "suppliers": [
+        "212",
+        "22",
+        "327",
+        "332"
+      ],
+      "percentages": [
+        0.1,
+        0.043,
+        0.018,
+        0.032
+      ]
+    },
+    {
+      "id": "332",
+      "suppliers": [
+        "331",
+        "325",
+        "55",
+        "561"
+      ],
+      "percentages": [
+        0.376,
+        0.046,
+        0.038,
+        0.035
+      ]
+    },
+    {
+      "id": "333",
+      "suppliers": [
+        "331",
+        "332",
+        "335",
+        "3361MV"
+      ],
+      "percentages": [
+        0.145,
+        0.137,
+        0.078,
+        0.087
+      ]
+    },
+    {
+      "id": "334",
+      "suppliers": [
+        "331",
+        "332",
+        "5412OP",
+        "55"
+      ],
+      "percentages": [
+        0.045,
+        0.059,
+        0.069,
+        0.144
+      ]
+    },
+    {
+      "id": "335",
+      "suppliers": [
+        "331",
+        "332",
+        "334",
+        "325"
+      ],
+      "percentages": [
+        0.251,
+        0.142,
+        0.082,
+        0.043
+      ]
+    },
+    {
+      "id": "3361MV",
+      "suppliers": [
+        "331",
+        "332",
+        "333",
+        "326"
+      ],
+      "percentages": [
+        0.095,
+        0.094,
+        0.06,
+        0.061
+      ]
+    },
+    {
+      "id": "3364OT",
+      "suppliers": [
+        "331",
+        "332",
+        "333",
+        "334"
+      ],
+      "percentages": [
+        0.06,
+        0.088,
+        0.034,
+        0.112
+      ]
+    },
+    {
+      "id": "337",
+      "suppliers": [
+        "321",
+        "332",
+        "313TT",
+        "326"
+      ],
+      "percentages": [
+        0.161,
+        0.084,
+        0.084,
+        0.148
+      ]
+    },
+    {
+      "id": "339",
+      "suppliers": [
+        "331",
+        "332",
+        "325",
+        "326"
+      ],
+      "percentages": [
+        0.084,
+        0.079,
+        0.086,
+        0.103
+      ]
+    },
+    {
+      "id": "311FT",
+      "suppliers": [
+        "111CA",
+        "322",
+        "326",
+        "55"
+      ],
+      "percentages": [
+        0.405,
+        0.042,
+        0.034,
+        0.027
+      ]
+    },
+    {
+      "id": "313TT",
+      "suppliers": [
+        "111CA",
+        "22",
+        "315AL",
+        "325"
+      ],
+      "percentages": [
+        0.042,
+        0.033,
+        0.033,
+        0.342
+      ]
+    },
+    {
+      "id": "315AL",
+      "suppliers": [
+        "311FT",
+        "313TT",
+        "55",
+        "561"
+      ],
+      "percentages": [
+        0.147,
+        0.195,
+        0.063,
+        0.042
+      ]
+    },
+    {
+      "id": "322",
+      "suppliers": [
+        "113FF",
+        "321",
+        "332",
+        "325"
+      ],
+      "percentages": [
+        0.048,
+        0.047,
+        0.049,
+        0.119
+      ]
+    },
+    {
+      "id": "323",
+      "suppliers": [
+        "315AL",
+        "322",
+        "324",
+        "325",
+        "561"
+      ],
+      "percentages": [
+        0.059,
+        0.21,
+        0.046,
+        0.167,
+        0.065
+      ]
+    },
+    {
+      "id": "324",
+      "suppliers": [
+        "211",
+        "22",
+        "23",
+        "325"
+      ],
+      "percentages": [
+        0.855,
+        0.013,
+        0.018,
+        0.017
+      ]
+    },
+    {
+      "id": "325",
+      "suppliers": [
+        "22",
+        "324",
+        "326",
+        "55"
+      ],
+      "percentages": [
+        0.034,
+        0.03,
+        0.04,
+        0.056
+      ]
+    },
+    {
+      "id": "326",
+      "suppliers": [
+        "22",
+        "332",
+        "322",
+        "325"
+      ],
+      "percentages": [
+        0.031,
+        0.058,
+        0.038,
+        0.434
+      ]
+    },
+    {
+      "id": "42",
+      "suppliers": [
+        "ORE",
+        "5412OP",
+        "55",
+        "561"
+      ],
+      "percentages": [
+        0.104,
+        0.139,
+        0.115,
+        0.083
+      ]
+    },
+    {
+      "id": "441",
+      "suppliers": [
+        "3361MV",
+        "493",
+        "ORE",
+        "5412OP",
+        "561"
+      ],
+      "percentages": [
+        0.08,
+        0.11,
+        0.151,
+        0.18,
+        0.052
+      ]
+    },
+    {
+      "id": "445",
+      "suppliers": [
+        "22",
+        "493",
+        "ORE",
+        "5412OP",
+        "55"
+      ],
+      "percentages": [
+        0.105,
+        0.115,
+        0.211,
+        0.089,
+        0.048
+      ]
+    },
+    {
+      "id": "452",
+      "suppliers": [
+        "22",
+        "493",
+        "ORE",
+        "5412OP",
+        "55"
+      ],
+      "percentages": [
+        0.06,
+        0.139,
+        0.138,
+        0.09,
+        0.248
+      ]
+    },
+    {
+      "id": "4A0",
+      "suppliers": [
+        "493",
+        "ORE",
+        "5412OP",
+        "55",
+        "561"
+      ],
+      "percentages": [
+        0.076,
+        0.233,
+        0.134,
+        0.067,
+        0.06
+      ]
+    },
+    {
+      "id": "481",
+      "suppliers": [
+        "324",
+        "487OS",
+        "532RL",
+        "561",
+        "722"
+      ],
+      "percentages": [
+        0.343,
+        0.219,
+        0.098,
+        0.032,
+        0.074
+      ]
+    },
+    {
+      "id": "482",
+      "suppliers": [
+        "23",
+        "324",
+        "521CI",
+        "532RL",
+        "5412OP"
+      ],
+      "percentages": [
+        0.06,
+        0.166,
+        0.192,
+        0.111,
+        0.075
+      ]
+    },
+    {
+      "id": "483",
+      "suppliers": [
+        "324",
+        "487OS",
+        "523",
+        "561",
+        "GFE"
+      ],
+      "percentages": [
+        0.155,
+        0.15,
+        0.166,
+        0.121,
+        0.076
+      ]
+    },
+    {
+      "id": "484",
+      "suppliers": [
+        "324",
+        "487OS",
+        "532RL",
+        "561",
+        "81"
+      ],
+      "percentages": [
+        0.275,
+        0.174,
+        0.058,
+        0.064,
+        0.072
+      ]
+    },
+    {
+      "id": "485",
+      "suppliers": [
+        "322",
+        "324",
+        "521CI",
+        "524",
+        "561"
+      ],
+      "percentages": [
+        0.049,
+        0.143,
+        0.268,
+        0.081,
+        0.109
+      ]
+    },
+    {
+      "id": "486",
+      "suppliers": [
+        "22",
+        "23",
+        "332",
+        "5412OP",
+        "561"
+      ],
+      "percentages": [
+        0.136,
+        0.18,
+        0.117,
+        0.088,
+        0.111
+      ]
+    },
+    {
+      "id": "487OS",
+      "suppliers": [
+        "324",
+        "326",
+        "55",
+        "561"
+      ],
+      "percentages": [
+        0.102,
+        0.042,
+        0.038,
+        0.066
+      ]
+    },
+    {
+      "id": "493",
+      "suppliers": [
+        "22",
+        "3361MV",
+        "ORE",
+        "561"
+      ],
+      "percentages": [
+        0.177,
+        0.054,
+        0.262,
+        0.073
+      ]
+    },
+    {
+      "id": "511",
+      "suppliers": [
+        "323",
+        "5412OP",
+        "55",
+        "561"
+      ],
+      "percentages": [
+        0.071,
+        0.18,
+        0.076,
+        0.134
+      ]
+    },
+    {
+      "id": "512",
+      "suppliers": [
+        "ORE",
+        "532RL",
+        "5412OP",
+        "711AS"
+      ],
+      "percentages": [
+        0.065,
+        0.049,
+        0.169,
+        0.112
+      ]
+    },
+    {
+      "id": "513",
+      "suppliers": [
+        "512",
+        "5412OP",
+        "561",
+        "711AS"
+      ],
+      "percentages": [
+        0.095,
+        0.129,
+        0.085,
+        0.065
+      ]
+    },
+    {
+      "id": "514",
+      "suppliers": [
+        "ORE",
+        "5415",
+        "5412OP",
+        "561"
+      ],
+      "percentages": [
+        0.065,
+        0.058,
+        0.199,
+        0.161
+      ]
+    },
+    {
+      "id": "521CI",
+      "suppliers": [
+        "523",
+        "ORE",
+        "5412OP",
+        "561"
+      ],
+      "percentages": [
+        0.09,
+        0.101,
+        0.24,
+        0.074
+      ]
+    },
+    {
+      "id": "523",
+      "suppliers": [
+        "521CI",
+        "524",
+        "ORE",
+        "5412OP"
+      ],
+      "percentages": [
+        0.116,
+        0.054,
+        0.084,
+        0.147
+      ]
+    },
+    {
+      "id": "524",
+      "suppliers": [
+        "525",
+        "ORE",
+        "5411",
+        "5412OP"
+      ],
+      "percentages": [
+        0.021,
+        0.07,
+        0.029,
+        0.041
+      ]
+    },
+    {
+      "id": "525",
+      "suppliers": [
+        "521CI",
+        "523",
+        "524",
+        "5412OP"
+      ],
+      "percentages": [
+        0.03,
+        0.696,
+        0.042,
+        0.022
+      ]
+    },
+    {
+      "id": "HS",
+      "suppliers": [
+        "23",
+        "337",
+        "521CI",
+        "524",
+        "ORE"
+      ],
+      "percentages": [
+        0.346,
+        0.039,
+        0.485,
+        0.046,
+        0.029
+      ]
+    },
+    {
+      "id": "ORE",
+      "suppliers": [
+        "22",
+        "23",
+        "5412OP",
+        "561"
+      ],
+      "percentages": [
+        0.127,
+        0.09,
+        0.12,
+        0.13
+      ]
+    },
+    {
+      "id": "532RL",
+      "suppliers": [
+        "521CI",
+        "ORE",
+        "5412OP",
+        "561",
+        "81"
+      ],
+      "percentages": [
+        0.148,
+        0.084,
+        0.083,
+        0.12,
+        0.076
+      ]
+    },
+    {
+      "id": "5411",
+      "suppliers": [
+        "513",
+        "ORE",
+        "5412OP",
+        "55",
+        "561"
+      ],
+      "percentages": [
+        0.047,
+        0.253,
+        0.108,
+        0.081,
+        0.101
+      ]
+    },
+    {
+      "id": "5415",
+      "suppliers": [
+        "334",
+        "ORE",
+        "5412OP",
+        "55",
+        "561"
+      ],
+      "percentages": [
+        0.064,
+        0.055,
+        0.196,
+        0.052,
+        0.246
+      ]
+    },
+    {
+      "id": "5412OP",
+      "suppliers": [
+        "521CI",
+        "ORE",
+        "55",
+        "561"
+      ],
+      "percentages": [
+        0.037,
+        0.092,
+        0.047,
+        0.11
+      ]
+    },
+    {
+      "id": "55",
+      "suppliers": [
+        "521CI",
+        "ORE",
+        "532RL",
+        "5415",
+        "5412OP"
+      ],
+      "percentages": [
+        0.072,
+        0.131,
+        0.088,
+        0.091,
+        0.229
+      ]
+    },
+    {
+      "id": "561",
+      "suppliers": [
+        "514",
+        "ORE",
+        "5412OP",
+        "55"
+      ],
+      "percentages": [
+        0.051,
+        0.046,
+        0.127,
+        0.135
+      ]
+    },
+    {
+      "id": "562",
+      "suppliers": [
+        "333",
+        "5412OP",
+        "55",
+        "561"
+      ],
+      "percentages": [
+        0.08,
+        0.06,
+        0.065,
+        0.069
+      ]
+    },
+    {
+      "id": "61",
+      "suppliers": [
+        "22",
+        "311FT",
+        "ORE",
+        "5412OP",
+        "55"
+      ],
+      "percentages": [
+        0.061,
+        0.074,
+        0.331,
+        0.05,
+        0.043
+      ]
+    },
+    {
+      "id": "621",
+      "suppliers": [
+        "325",
+        "ORE",
+        "5412OP",
+        "55",
+        "561"
+      ],
+      "percentages": [
+        0.132,
+        0.152,
+        0.092,
+        0.081,
+        0.081
+      ]
+    },
+    {
+      "id": "622",
+      "suppliers": [
+        "325",
+        "524",
+        "ORE",
+        "5412OP",
+        "561"
+      ],
+      "percentages": [
+        0.101,
+        0.134,
+        0.086,
+        0.098,
+        0.128
+      ]
+    },
+    {
+      "id": "623",
+      "suppliers": [
+        "311FT",
+        "ORE",
+        "5412OP",
+        "561",
+        "722"
+      ],
+      "percentages": [
+        0.082,
+        0.26,
+        0.087,
+        0.088,
+        0.103
+      ]
+    },
+    {
+      "id": "624",
+      "suppliers": [
+        "311FT",
+        "524",
+        "ORE",
+        "5412OP",
+        "561"
+      ],
+      "percentages": [
+        0.123,
+        0.052,
+        0.223,
+        0.076,
+        0.045
+      ]
+    },
+    {
+      "id": "711AS",
+      "suppliers": [
+        "ORE",
+        "5412OP",
+        "55",
+        "561"
+      ],
+      "percentages": [
+        0.152,
+        0.102,
+        0.044,
+        0.064
+      ]
+    },
+    {
+      "id": "713",
+      "suppliers": [
+        "22",
+        "311FT",
+        "ORE",
+        "5412OP",
+        "561"
+      ],
+      "percentages": [
+        0.044,
+        0.119,
+        0.216,
+        0.111,
+        0.048
+      ]
+    },
+    {
+      "id": "721",
+      "suppliers": [
+        "311FT",
+        "ORE",
+        "5412OP",
+        "55",
+        "722"
+      ],
+      "percentages": [
+        0.09,
+        0.072,
+        0.106,
+        0.184,
+        0.074
+      ]
+    },
+    {
+      "id": "722",
+      "suppliers": [
+        "22",
+        "311FT",
+        "ORE",
+        "5412OP",
+        "55"
+      ],
+      "percentages": [
+        0.061,
+        0.209,
+        0.181,
+        0.088,
+        0.153
+      ]
+    },
+    {
+      "id": "81",
+      "suppliers": [
+        "3361MV",
+        "521CI",
+        "523",
+        "ORE",
+        "5412OP"
+      ],
+      "percentages": [
+        0.07,
+        0.056,
+        0.049,
+        0.182,
+        0.085
+      ]
+    },
+    {
+      "id": "GFGD",
+      "suppliers": [
+        "334",
+        "3364OT",
+        "5415",
+        "5412OP",
+        "561"
+      ],
+      "percentages": [
+        0.103,
+        0.136,
+        0.108,
+        0.18,
+        0.066
+      ]
+    },
+    {
+      "id": "GFGN",
+      "suppliers": [
+        "514",
+        "524",
+        "ORE",
+        "5415",
+        "5412OP"
+      ],
+      "percentages": [
+        0.027,
+        0.493,
+        0.06,
+        0.106,
+        0.056
+      ]
+    },
+    {
+      "id": "GFE",
+      "suppliers": [
+        "337",
+        "324",
+        "521CI",
+        "5412OP",
+        "561"
+      ],
+      "percentages": [
+        0.057,
+        0.093,
+        0.113,
+        0.069,
+        0.084
+      ]
+    },
+    {
+      "id": "GSLG",
+      "suppliers": [
+        "311FT",
+        "324",
+        "325",
+        "513",
+        "5412OP"
+      ],
+      "percentages": [
+        0.094,
+        0.102,
+        0.052,
+        0.063,
+        0.077
+      ]
+    },
+    {
+      "id": "GSLE",
+      "suppliers": [
+        "211",
+        "23",
+        "324",
+        "524",
+        "5412OP"
+      ],
+      "percentages": [
+        0.135,
+        0.245,
+        0.094,
+        0.055,
+        0.088
+      ]
+    }
+  ],
+  "customers": [
+    {
+      "id": "111CA",
+      "customers": [
+        "23",
+        "311FT",
+        "325",
+        "GSLG"
+      ],
+      "percentages": [
+        0.008,
+        0.737,
+        0.027,
+        0.009
+      ]
+    },
+    {
+      "id": "113FF",
+      "customers": [
+        "111CA",
+        "321",
+        "311FT",
+        "322"
+      ],
+      "percentages": [
+        0.313,
+        0.218,
+        0.113,
+        0.078
+      ]
+    },
+    {
+      "id": "211",
+      "customers": [
+        "22",
+        "324",
+        "325",
+        "GSLE"
+      ],
+      "percentages": [
+        0.085,
+        0.764,
+        0.023,
+        0.063
+      ]
+    },
+    {
+      "id": "212",
+      "customers": [
+        "22",
+        "23",
+        "327",
+        "331",
+        "GSLE"
+      ],
+      "percentages": [
+        0.162,
+        0.188,
+        0.107,
+        0.154,
+        0.087
+      ]
+    },
+    {
+      "id": "213",
+      "customers": [
+        "211",
+        "212",
+        "5412OP",
+        "55"
+      ],
+      "percentages": [
+        0.762,
+        0.13,
+        0.003,
+        0.0
+      ]
+    },
+    {
+      "id": "22",
+      "customers": [
+        "4A0",
+        "ORE",
+        "722",
+        "GSLG"
+      ],
+      "percentages": [
+        0.041,
+        0.224,
+        0.053,
+        0.048
+      ]
+    },
+    {
+      "id": "23",
+      "customers": [
+        "22",
+        "HS",
+        "ORE",
+        "GSLG",
+        "GSLE"
+      ],
+      "percentages": [
+        0.031,
+        0.257,
+        0.219,
+        0.1,
+        0.163
+      ]
+    },
+    {
+      "id": "321",
+      "customers": [
+        "23",
+        "337",
+        "322",
+        "ORE"
+      ],
+      "percentages": [
+        0.4,
+        0.055,
+        0.045,
+        0.054
+      ]
+    },
+    {
+      "id": "327",
+      "customers": [
+        "23",
+        "3361MV",
+        "311FT",
+        "5412OP"
+      ],
+      "percentages": [
+        0.503,
+        0.055,
+        0.041,
+        0.025
+      ]
+    },
+    {
+      "id": "331",
+      "customers": [
+        "332",
+        "333",
+        "335",
+        "3361MV"
+      ],
+      "percentages": [
+        0.25,
+        0.107,
+        0.051,
+        0.163
+      ]
+    },
+    {
+      "id": "332",
+      "customers": [
+        "23",
+        "333",
+        "3361MV",
+        "311FT"
+      ],
+      "percentages": [
+        0.25,
+        0.076,
+        0.122,
+        0.041
+      ]
+    },
+    {
+      "id": "333",
+      "customers": [
+        "211",
+        "23",
+        "3361MV",
+        "81"
+      ],
+      "percentages": [
+        0.035,
+        0.189,
+        0.139,
+        0.032
+      ]
+    },
+    {
+      "id": "334",
+      "customers": [
+        "3361MV",
+        "3364OT",
+        "513",
+        "GFGD"
+      ],
+      "percentages": [
+        0.101,
+        0.077,
+        0.084,
+        0.083
+      ]
+    },
+    {
+      "id": "335",
+      "customers": [
+        "23",
+        "333",
+        "3361MV",
+        "5412OP"
+      ],
+      "percentages": [
+        0.359,
+        0.118,
+        0.058,
+        0.038
+      ]
+    },
+    {
+      "id": "3361MV",
+      "customers": [
+        "333",
+        "441",
+        "561",
+        "81"
+      ],
+      "percentages": [
+        0.051,
+        0.018,
+        0.021,
+        0.045
+      ]
+    },
+    {
+      "id": "3364OT",
+      "customers": [
+        "482",
+        "483",
+        "487OS",
+        "GFGD"
+      ],
+      "percentages": [
+        0.015,
+        0.015,
+        0.012,
+        0.261
+      ]
+    },
+    {
+      "id": "337",
+      "customers": [
+        "23",
+        "4A0",
+        "HS",
+        "GFE"
+      ],
+      "percentages": [
+        0.539,
+        0.028,
+        0.16,
+        0.041
+      ]
+    },
+    {
+      "id": "339",
+      "customers": [
+        "333",
+        "621",
+        "622",
+        "GSLG"
+      ],
+      "percentages": [
+        0.032,
+        0.234,
+        0.262,
+        0.096
+      ]
+    },
+    {
+      "id": "311FT",
+      "customers": [
+        "111CA",
+        "622",
+        "722",
+        "GSLG"
+      ],
+      "percentages": [
+        0.101,
+        0.02,
+        0.148,
+        0.13
+      ]
+    },
+    {
+      "id": "313TT",
+      "customers": [
+        "3361MV",
+        "337",
+        "452",
+        "GSLG"
+      ],
+      "percentages": [
+        0.089,
+        0.056,
+        0.059,
+        0.053
+      ]
+    },
+    {
+      "id": "315AL",
+      "customers": [
+        "3361MV",
+        "513",
+        "81",
+        "GSLG"
+      ],
+      "percentages": [
+        0.122,
+        0.093,
+        0.092,
+        0.215
+      ]
+    },
+    {
+      "id": "322",
+      "customers": [
+        "311FT",
+        "323",
+        "325",
+        "GSLG"
+      ],
+      "percentages": [
+        0.152,
+        0.046,
+        0.047,
+        0.078
+      ]
+    },
+    {
+      "id": "323",
+      "customers": [
+        "42",
+        "4A0",
+        "511",
+        "5412OP",
+        "GSLG"
+      ],
+      "percentages": [
+        0.139,
+        0.061,
+        0.096,
+        0.078,
+        0.164
+      ]
+    },
+    {
+      "id": "324",
+      "customers": [
+        "22",
+        "23",
+        "481",
+        "484",
+        "GSLG"
+      ],
+      "percentages": [
+        0.05,
+        0.129,
+        0.079,
+        0.124,
+        0.168
+      ]
+    },
+    {
+      "id": "325",
+      "customers": [
+        "111CA",
+        "326",
+        "621",
+        "622"
+      ],
+      "percentages": [
+        0.054,
+        0.101,
+        0.062,
+        0.056
+      ]
+    },
+    {
+      "id": "326",
+      "customers": [
+        "23",
+        "3361MV",
+        "311FT",
+        "325"
+      ],
+      "percentages": [
+        0.147,
+        0.116,
+        0.084,
+        0.065
+      ]
+    },
+    {
+      "id": "42",
+      "customers": [
+        "311FT",
+        "325",
+        "4A0",
+        "532RL"
+      ],
+      "percentages": [
+        0.04,
+        0.059,
+        0.116,
+        0.084
+      ]
+    },
+    {
+      "id": "441",
+      "customers": [],
+      "percentages": []
+    },
+    {
+      "id": "445",
+      "customers": [],
+      "percentages": []
+    },
+    {
+      "id": "452",
+      "customers": [],
+      "percentages": []
+    },
+    {
+      "id": "4A0",
+      "customers": [
+        "441",
+        "452",
+        "81"
+      ],
+      "percentages": [
+        0.41,
+        0.257,
+        0.002
+      ]
+    },
+    {
+      "id": "481",
+      "customers": [
+        "42",
+        "523",
+        "ORE",
+        "5412OP",
+        "561"
+      ],
+      "percentages": [
+        0.08,
+        0.068,
+        0.108,
+        0.07,
+        0.08
+      ]
+    },
+    {
+      "id": "482",
+      "customers": [
+        "484",
+        "487OS",
+        "5412OP",
+        "GFE",
+        "GSLG"
+      ],
+      "percentages": [
+        0.614,
+        0.055,
+        0.049,
+        0.067,
+        0.052
+      ]
+    },
+    {
+      "id": "483",
+      "customers": [
+        "5412OP",
+        "61",
+        "GFGD",
+        "GFE",
+        "GSLG"
+      ],
+      "percentages": [
+        0.219,
+        0.067,
+        0.392,
+        0.204,
+        0.062
+      ]
+    },
+    {
+      "id": "484",
+      "customers": [
+        "42",
+        "441",
+        "4A0",
+        "487OS"
+      ],
+      "percentages": [
+        0.107,
+        0.075,
+        0.168,
+        0.12
+      ]
+    },
+    {
+      "id": "485",
+      "customers": [
+        "523",
+        "ORE",
+        "5412OP",
+        "561",
+        "GSLG"
+      ],
+      "percentages": [
+        0.039,
+        0.07,
+        0.083,
+        0.059,
+        0.325
+      ]
+    },
+    {
+      "id": "486",
+      "customers": [
+        "211"
+      ],
+      "percentages": [
+        1.0
+      ]
+    },
+    {
+      "id": "487OS",
+      "customers": [
+        "42",
+        "4A0",
+        "481",
+        "484"
+      ],
+      "percentages": [
+        0.203,
+        0.044,
+        0.102,
+        0.16
+      ]
+    },
+    {
+      "id": "493",
+      "customers": [
+        "42",
+        "441",
+        "452",
+        "4A0"
+      ],
+      "percentages": [
+        0.209,
+        0.077,
+        0.099,
+        0.227
+      ]
+    },
+    {
+      "id": "511",
+      "customers": [
+        "42",
+        "5412OP",
+        "55",
+        "GSLG"
+      ],
+      "percentages": [
+        0.039,
+        0.067,
+        0.045,
+        0.252
+      ]
+    },
+    {
+      "id": "512",
+      "customers": [
+        "513",
+        "5412OP",
+        "61",
+        "722"
+      ],
+      "percentages": [
+        0.538,
+        0.025,
+        0.026,
+        0.024
+      ]
+    },
+    {
+      "id": "513",
+      "customers": [
+        "42",
+        "ORE",
+        "5412OP",
+        "GSLG"
+      ],
+      "percentages": [
+        0.052,
+        0.043,
+        0.036,
+        0.13
+      ]
+    },
+    {
+      "id": "514",
+      "customers": [
+        "5412OP",
+        "561",
+        "GFGD",
+        "GSLG"
+      ],
+      "percentages": [
+        0.089,
+        0.11,
+        0.071,
+        0.082
+      ]
+    },
+    {
+      "id": "521CI",
+      "customers": [
+        "42",
+        "523",
+        "HS",
+        "ORE"
+      ],
+      "percentages": [
+        0.044,
+        0.083,
+        0.217,
+        0.111
+      ]
+    },
+    {
+      "id": "523",
+      "customers": [
+        "521CI",
+        "525",
+        "81",
+        "GSLG"
+      ],
+      "percentages": [
+        0.079,
+        0.362,
+        0.044,
+        0.088
+      ]
+    },
+    {
+      "id": "524",
+      "customers": [
+        "42",
+        "ORE",
+        "622",
+        "GFGN"
+      ],
+      "percentages": [
+        0.038,
+        0.063,
+        0.071,
+        0.082
+      ]
+    },
+    {
+      "id": "525",
+      "customers": [
+        "524",
+        "55"
+      ],
+      "percentages": [
+        0.403,
+        0.003
+      ]
+    },
+    {
+      "id": "HS",
+      "customers": [],
+      "percentages": []
+    },
+    {
+      "id": "ORE",
+      "customers": [
+        "42",
+        "4A0",
+        "621",
+        "722"
+      ],
+      "percentages": [
+        0.073,
+        0.084,
+        0.046,
+        0.061
+      ]
+    },
+    {
+      "id": "532RL",
+      "customers": [
+        "23",
+        "42",
+        "513",
+        "5412OP",
+        "55"
+      ],
+      "percentages": [
+        0.075,
+        0.102,
+        0.043,
+        0.055,
+        0.072
+      ]
+    },
+    {
+      "id": "5411",
+      "customers": [
+        "42",
+        "524",
+        "ORE",
+        "5412OP",
+        "622"
+      ],
+      "percentages": [
+        0.072,
+        0.068,
+        0.09,
+        0.058,
+        0.06
+      ]
+    },
+    {
+      "id": "5415",
+      "customers": [
+        "42",
+        "5412OP",
+        "55",
+        "GFGD",
+        "GSLG"
+      ],
+      "percentages": [
+        0.061,
+        0.065,
+        0.089,
+        0.106,
+        0.082
+      ]
+    },
+    {
+      "id": "5412OP",
+      "customers": [
+        "23",
+        "42",
+        "521CI",
+        "ORE"
+      ],
+      "percentages": [
+        0.047,
+        0.082,
+        0.05,
+        0.069
+      ]
+    },
+    {
+      "id": "55",
+      "customers": [
+        "325",
+        "42",
+        "561",
+        "621",
+        "722"
+      ],
+      "percentages": [
+        0.047,
+        0.15,
+        0.079,
+        0.047,
+        0.097
+      ]
+    },
+    {
+      "id": "561",
+      "customers": [
+        "42",
+        "ORE",
+        "5412OP",
+        "622"
+      ],
+      "percentages": [
+        0.079,
+        0.12,
+        0.068,
+        0.063
+      ]
+    },
+    {
+      "id": "562",
+      "customers": [
+        "23",
+        "ORE",
+        "GSLG",
+        "GSLE"
+      ],
+      "percentages": [
+        0.037,
+        0.131,
+        0.225,
+        0.044
+      ]
+    },
+    {
+      "id": "61",
+      "customers": [
+        "42",
+        "4A0",
+        "81",
+        "GSLG"
+      ],
+      "percentages": [
+        0.061,
+        0.119,
+        0.088,
+        0.435
+      ]
+    },
+    {
+      "id": "621",
+      "customers": [
+        "622",
+        "711AS",
+        "GFGN",
+        "GSLG"
+      ],
+      "percentages": [
+        0.351,
+        0.004,
+        0.011,
+        0.234
+      ]
+    },
+    {
+      "id": "622",
+      "customers": [],
+      "percentages": []
+    },
+    {
+      "id": "623",
+      "customers": [
+        "GFGN",
+        "GSLG"
+      ],
+      "percentages": [
+        0.768,
+        0.232
+      ]
+    },
+    {
+      "id": "624",
+      "customers": [
+        "GSLG"
+      ],
+      "percentages": [
+        1.0
+      ]
+    },
+    {
+      "id": "711AS",
+      "customers": [
+        "512",
+        "513",
+        "ORE",
+        "5412OP"
+      ],
+      "percentages": [
+        0.077,
+        0.315,
+        0.058,
+        0.046
+      ]
+    },
+    {
+      "id": "713",
+      "customers": [
+        "ORE",
+        "55",
+        "561",
+        "721",
+        "GSLG"
+      ],
+      "percentages": [
+        0.061,
+        0.095,
+        0.075,
+        0.061,
+        0.093
+      ]
+    },
+    {
+      "id": "721",
+      "customers": [
+        "521CI",
+        "523",
+        "ORE",
+        "5412OP",
+        "561"
+      ],
+      "percentages": [
+        0.065,
+        0.072,
+        0.125,
+        0.092,
+        0.095
+      ]
+    },
+    {
+      "id": "722",
+      "customers": [
+        "ORE",
+        "5412OP",
+        "561",
+        "621",
+        "GSLG"
+      ],
+      "percentages": [
+        0.128,
+        0.08,
+        0.065,
+        0.095,
+        0.069
+      ]
+    },
+    {
+      "id": "81",
+      "customers": [
+        "42",
+        "484",
+        "622",
+        "722",
+        "GSLG"
+      ],
+      "percentages": [
+        0.101,
+        0.056,
+        0.073,
+        0.043,
+        0.095
+      ]
+    },
+    {
+      "id": "GFGD",
+      "customers": [],
+      "percentages": []
+    },
+    {
+      "id": "GFGN",
+      "customers": [],
+      "percentages": []
+    },
+    {
+      "id": "GFE",
+      "customers": [
+        "42",
+        "4A0",
+        "484",
+        "523",
+        "722"
+      ],
+      "percentages": [
+        0.253,
+        0.06,
+        0.057,
+        0.186,
+        0.052
+      ]
+    },
+    {
+      "id": "GSLG",
+      "customers": [],
+      "percentages": []
+    },
+    {
+      "id": "GSLE",
+      "customers": [
+        "22",
+        "5412OP",
+        "624",
+        "722",
+        "GSLG"
+      ],
+      "percentages": [
+        0.141,
+        0.048,
+        0.071,
+        0.043,
+        0.166
+      ]
+    }
+  ]
+}

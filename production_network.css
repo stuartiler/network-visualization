@@ -1,0 +1,20 @@
+body {
+  text-align: center;
+}
+
+svg text {
+  font-family: arial, sans-serif;
+  font-size: 12px;
+}
+
+.node_area circle:hover {
+  stroke: black;
+}
+
+.beeswarm_area circle:hover {
+  stroke: black;
+}
+
+text.hover_indname {
+  font-weight: bold;
+}
