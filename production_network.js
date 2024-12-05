@@ -9,12 +9,9 @@
    name in the hover box. */
 
 
-/* Store a reference to the svg element and store
-   its given width and height */
+// Store references to the svg elements
 var svgNetwork = d3.select("svg.svg_network"),
-    svgBeeswarm = d3.select("svg.svg_beeswarm"),
-    width = +svgNetwork.attr("width"),
-    height = +svgNetwork.attr("height");
+    svgBeeswarm = d3.select("svg.svg_beeswarm");
 
 /* Store the x and y coordinates of the svg elements,
    which allows the position of their respective hover
@@ -37,14 +34,14 @@ var focus_y = 350;
 // Set the x coordinate of the industries in the "both" group
 var both_x = 560;
 
-// Set the x coordinate of the beeswarm plot
+// Set the x and coordinates of the beeswarm plot
 var beeswarm_x = 100;
 var beeswarm_y = 250;
 
-// Set the y coordinate of the supplier industries
+// Set the y coordinate of the first-degree supplier industries
 var supplier_y = 200;
 
-// Set the y coordinate of the customer industries
+// Set the y coordinate of the first-degree customer industries
 var customer_y = 500;
 
 // Set the height of the beeswarm plot
