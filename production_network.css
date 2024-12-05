@@ -2,9 +2,28 @@ body {
   text-align: center;
 }
 
+svg.svg_network, svg.svg_beeswarm {
+  overflow: visible;
+}
+
+div.production_network {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 svg text {
   font-family: arial, sans-serif;
   font-size: 12px;
+}
+
+.white_background_rect {
+  pointer-events: none;
+}
+
+.node_area text {
+  pointer-events: none;
 }
 
 .node_area circle:hover {

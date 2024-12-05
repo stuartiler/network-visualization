@@ -11,35 +11,41 @@
 
 /* Store a reference to the svg element and store
    its given width and height */
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+var svgNetwork = d3.select("svg.svg_network"),
+    svgBeeswarm = d3.select("svg.svg_beeswarm"),
+    width = +svgNetwork.attr("width"),
+    height = +svgNetwork.attr("height");
 
-/* Store the x and y coordinates of the svg element,
-   which allows the position of the hover box to be
-   adjusted accordingly */
-var svgEl = document.querySelector("svg");
-var svgRect = svgEl.getBoundingClientRect();
-var hover_adjustX = svgRect.x + window.scrollX;
-var hover_adjustY = svgRect.y + window.scrollY;
+/* Store the x and y coordinates of the svg elements,
+   which allows the position of their respective hover
+   boxes to be adjusted accordingly */
+var svgEl_network = document.querySelector("svg.svg_network");
+var svgRect_network = svgEl_network.getBoundingClientRect();
+var hover_network_adjustX = svgRect_network.x + window.scrollX;
+var hover_network_adjustY = svgRect_network.y + window.scrollY;
+var svgEl_beeswarm = document.querySelector("svg.svg_beeswarm");
+var svgRect_beeswarm = svgEl_beeswarm.getBoundingClientRect();
+var hover_beeswarm_adjustX = svgRect_beeswarm.x + window.scrollX;
+var hover_beeswarm_adjustY = svgRect_beeswarm.y + window.scrollY;
 
 /* Set the x and y coordinates of the focus industry,
    around which everything in the main visualization
    is centered */
-var focus_x = 350;
-var focus_y = 400;
+var focus_x = 325;
+var focus_y = 350;
 
 // Set the x coordinate of the industries in the "both" group
-var both_x = 600;
+var both_x = 560;
 
 // Set the x coordinate of the beeswarm plot
-var beeswarm_x = 900;
+var beeswarm_x = 100;
+var beeswarm_y = 250;
 
 // Set the y coordinate of the supplier industries
-var supplier_y = 250;
+var supplier_y = 200;
 
 // Set the y coordinate of the customer industries
-var customer_y = 550;
+var customer_y = 500;
 
 // Set the height of the beeswarm plot
 var beeswarm_y_range = 400;
@@ -54,7 +60,7 @@ var both_color = "#2A0944";
 /* Define an arrow shape to be used for the connecting
    lines between the focus industry and the suppliers
    and customers */
-svg
+svgNetwork
   .append('defs')
   .append('marker')
   .attr('id', 'arrow')
@@ -72,38 +78,38 @@ svg
 
 /* Create a group for the arrows that will point
    from suppliers to the focus industry */
-var upstream_links = svg.append("g")
+var upstream_links = svgNetwork.append("g")
   .attr("class", "upstream_links");
 
 /* Create a group for the arrows that will point
    from the focus industry to the customers */
-var downstream_links = svg.append("g")
+var downstream_links = svgNetwork.append("g")
   .attr("class", "downstream_links");
 
 /* Create a group for the arrows that will point
    back-and-forth to the "both" industries */
-var both_links = svg.append("g")
+var both_links = svgNetwork.append("g")
   .attr("class", "both_links");
 
 /* Create a group for the focus node's second-
    degree suppliers and customers */
-var node_area_2nd = svg.append("g")
+var node_area_2nd = svgNetwork.append("g")
   .attr("class", "node_area_2nd");
 
 /* Create a group for the focus node and its
    first-degree suppliers and customers */
-var node_area = svg.append("g")
+var node_area = svgNetwork.append("g")
     .attr("class", "node_area");
 
 /* Create a group for the beeswarm chart that
    displays industries' upstreamness */
-var beeswarm_area = svg.append("g")
+var beeswarm_area = svgBeeswarm.append("g")
   .attr("class", "beeswarm_area");
 
 /* Create a hover box with a line for the
    industry name and two lines for additional
    details (such as percentages and upstreamness) */
-var hover = svg.append("g")
+var hover = svgNetwork.append("g")
   .attr("class", "hover_area")
   .attr("transform", "translate(50,50)")
   .attr("opacity", 0)
@@ -131,13 +137,42 @@ hover.append("text")
   .attr("y", 60)
   .text("Test");
 
+/* Create a hover box with a line for the
+   industry name and two lines for additional
+   details (such as percentages and upstreamness) */
+var hoverBeeswarm = svgBeeswarm.append("g")
+  .attr("class", "hover_area_beeswarm")
+  .attr("transform", "translate(50,50)")
+  .attr("opacity", 0)
+  .style("pointer-events", "none");
+hoverBeeswarm.append("rect")
+  .attr("width", 300)
+  .attr("height", 70)
+  .attr("fill", "#eee")
+  .attr("stroke", "black")
+  .attr("rx", 10)
+  .attr("ry", 10);
+hoverBeeswarm.append("text")
+  .attr("class", "hover_indname")
+  .attr("x", 10)
+  .attr("y", 20)
+  .text("Test");
+hoverBeeswarm.append("text")
+  .attr("class", "hover_detail1")
+  .attr("x", 10)
+  .attr("y", 40)
+  .text("Test");
+hoverBeeswarm.append("text")
+  .attr("class", "hover_detail2")
+  .attr("x", 10)
+  .attr("y", 60)
+  .text("Test");
+
 // Set the initial focus industry to "Farms"
 var focus_industry = "111CA";
 
-
-
 /* Load the production network data and
-   render the interactive chart */
+   render the visualizations */
 d3.json("production_network.json").then(function(graph) {
 
   /* Initialize the beeswarm chart, including the
@@ -155,8 +190,6 @@ d3.json("production_network.json").then(function(graph) {
 
 });
 
-
-
 /* FUNCTION: display_nodes(graph)
    This function takes the JSON graph data and
    draws/updates the main part of the visualization */
@@ -164,31 +197,35 @@ function display_nodes(graph) {
 
   /* Create the transition for the focus node and
      first-degree nodes and set the duration */
-  const t = svg.transition().duration(500);
+  const t = svgNetwork.transition().duration(500);
+
+  /* Create the transition for the focus node and
+     first-degree nodes and set the duration */
+  const t3 = svgBeeswarm.transition().duration(500);
 
   /* Create the transition for the second-degree
      nodes and the links and set the duration */
-  const t2 = svg.transition().duration(1000);
+  const t2 = svgNetwork.transition().duration(1000);
 
   /* Extract the array of suppliers for the current
      focus industry */
-  var upstream_ids = graph.suppliers
-    .filter(ind => ind.id == focus_industry)[0].suppliers;
+  let upstream_ids = graph.suppliers
+    .filter(ind => ind.id === focus_industry)[0].suppliers;
 
   /* Extract the array of supplier percentages for the
      current focus industry */
-  var upstream_pcts = graph.suppliers
-    .filter(ind => ind.id == focus_industry)[0].percentages;
+  let upstream_pcts = graph.suppliers
+    .filter(ind => ind.id === focus_industry)[0].percentages;
 
   /* Extract the array of customers for the current
      focus industry */
-  var downstream_ids = graph.customers
-    .filter(ind => ind.id == focus_industry)[0].customers;
+  let downstream_ids = graph.customers
+    .filter(ind => ind.id === focus_industry)[0].customers;
 
   /* Extract the array of customer percentages for the
      current focus industry */
-  var downstream_pcts = graph.customers
-    .filter(ind => ind.id == focus_industry)[0].percentages;
+  let downstream_pcts = graph.customers
+    .filter(ind => ind.id === focus_industry)[0].percentages;
 
   /* ***
      Create an array current_nodes that has one element for
@@ -197,11 +234,11 @@ function display_nodes(graph) {
      *** */
 
   // Initialize the current_nodes array
-  var current_nodes = [];
+  let current_nodes = [];
 
   /* Create an object to represent the current focus industry,
      which will be the first element in current_nodes */
-  var new_element = {};
+  let new_element = {};
 
   /* Fill in the object's properties; these are:
        id: the industry's 3-digit NAICS code
@@ -215,7 +252,7 @@ function display_nodes(graph) {
   */
   new_element.id = focus_industry;
   new_element.name = graph.nodes
-    .filter(ind => ind.id == focus_industry)[0].name +
+    .filter(ind => ind.id === focus_industry)[0].name +
     " (" + focus_industry + ")";
   new_element.group = "focus";
   new_element.index = 0;
@@ -230,20 +267,20 @@ function display_nodes(graph) {
   current_nodes.push(new_element);
 
   /* In preparation to loop through the current list of suppliers,
-     initialize the supplier and "both" indices to zero */
-  var supplier_index = 0;
-  var both_index = 0;
+     initialize supplier and "both" indices to zero */
+  let supplier_index = 0;
+  let both_index = 0;
 
   // Loop through the current array of suppliers
   for(const supplier of upstream_ids) {
 
     // Create an object to represent the supplier
-    var new_element = {};
+    let new_supplier_element = {};
 
     // Store the supplier's 3-digit NAICS code and text name
-    new_element.id = supplier;
-    new_element.name = graph.nodes
-      .filter(ind => ind.id == supplier)[0].name +
+    new_supplier_element.id = supplier;
+    new_supplier_element.name = graph.nodes
+      .filter(ind => ind.id === supplier)[0].name +
       " (" + supplier + ")";;
 
     /* If this supplier is also a customer of the focus industry,
@@ -251,20 +288,18 @@ function display_nodes(graph) {
        and the "sold to" percentages */
     if(downstream_ids.includes(supplier)) {
       // Put in the "both" group and store the index
-      new_element.group = "both";
-      new_element.index = both_index;
+      new_supplier_element.group = "both";
+      new_supplier_element.index = both_index;
 
       /* Store the percentage of the focus industry's inputs
          purchased from this supplier */
-      new_element.detail1 = "% of focus industry's (" + focus_industry +
-        "'s) supplies purchased from " + supplier + ": " +
+      new_supplier_element.detail1 = "% of focus industry's supplies purchased from industry " + supplier + ": " +
         (upstream_pcts[both_index+supplier_index] * 100).toFixed(1) + "%";
 
       /* Store the percentage of the focus industry's output
          sold to this industry as a customer */
-      new_element.detail2 = "% of focus industry's (" + focus_industry +
-        "'s) output sold to " + supplier + " : " +
-        (downstream_pcts[downstream_ids.findIndex((cust) => cust == supplier)] * 100).toFixed(1) + "%";
+      new_supplier_element.detail2 = "% of focus industry's output sold to industry " + supplier + " : " +
+        (downstream_pcts[downstream_ids.findIndex((cust) => cust === supplier)] * 100).toFixed(1) + "%";
 
       // Increment the index for the "both" group
       both_index += 1;
@@ -274,54 +309,54 @@ function display_nodes(graph) {
        from" percentage */
     else {
       // Put in the "supplier" group and store the index
-      new_element.group = "supplier";
-      new_element.index = supplier_index;
+      new_supplier_element.group = "supplier";
+      new_supplier_element.index = supplier_index;
 
       /* Store the percentage of the focus industry's inputs
          purchased from this supplier */
-      new_element.detail1 = "% of focus industry's (" + focus_industry +
-        "'s) supplies purchased from " + supplier + ": " +
+      new_supplier_element.detail1 = "% of focus industry's supplies purchased from industry " + supplier + ": " +
         (upstream_pcts[both_index+supplier_index] * 100).toFixed(1) + "%";
 
       // Set the second detail text to empty
-      new_element.detail2 = "";
+      new_supplier_element.detail2 = "";
 
       /* Retrieve this supplier's suppliers, storing their names
          and the percentages the supplier purchases from them */
-      var curr_up_up_ids = graph.suppliers
-        .filter(ind => ind.id == supplier)[0];
-      new_element.upstream_suppliers = curr_up_up_ids.suppliers;
-      new_element.upstream_percentages = curr_up_up_ids.percentages;
+      let curr_up_up_ids = graph.suppliers
+        .filter(ind => ind.id === supplier)[0];
+      new_supplier_element.upstream_suppliers = curr_up_up_ids.suppliers;
+      new_supplier_element.upstream_percentages = curr_up_up_ids.percentages;
 
       /* Set these last two properties to be empty as the second-
          degree customers are only shown on the downstream side */
-      new_element.downstream_customers = [];
-      new_element.downstream_percentages = [];
+      new_supplier_element.downstream_customers = [];
+      new_supplier_element.downstream_percentages = [];
 
       // Increment the index for the "supplier" group
       supplier_index += 1;
     }
 
     // Add the object for this supplier to the current_nodes array
-    current_nodes.push(new_element);
+    current_nodes.push(new_supplier_element);
 
   }
 
   /* In preparation to loop through the current list of customers,
-     initialize the customer and "both" indices to zero */
-  var customer_index = 0;
-  var both_index = 0;
+     initialize a customer index to zero and reset the "both"
+     index to zero */
+  let customer_index = 0;
+  both_index = 0;
 
   // Loop through the current array of customers
   for(const customer of downstream_ids) {
 
     // Create an object to represent the customer
-    var new_element = {};
+    let new_customer_element = {};
 
     // Store the customer's 3-digit NAICS code and text name
-    new_element.id = customer;
-    new_element.name = graph.nodes
-      .filter(ind => ind.id == customer)[0].name +
+    new_customer_element.id = customer;
+    new_customer_element.name = graph.nodes
+      .filter(ind => ind.id === customer)[0].name +
       " (" + customer + ")";;
 
     /* If this customer is also a supplier of the focus industry,
@@ -338,56 +373,52 @@ function display_nodes(graph) {
        to" percentage */
     else {
       // Put in the "customer" group and store the index
-      new_element.group = "customer";
-      new_element.index = customer_index;
+      new_customer_element.group = "customer";
+      new_customer_element.index = customer_index;
 
       /* Store the percentage of the focus industry's output
          sold to this customer */
-      new_element.detail1 = "% of focus industry's (" + focus_industry +
-        "'s) output sold to " + customer + " : " +
+      new_customer_element.detail1 = "% of focus industry's output sold to industry " + customer + " : " +
         (downstream_pcts[both_index+customer_index] * 100).toFixed(1) + "%";
 
       // Set the second detail text to empty
-      new_element.detail2 = "";
+      new_customer_element.detail2 = "";
 
       /* Set these two properties to be empty as the second-
          degree suppliers are only shown on the upstream side */
-      new_element.upstream_suppliers = [];
-      new_element.upstream_percentages = [];
+      new_customer_element.upstream_suppliers = [];
+      new_customer_element.upstream_percentages = [];
 
       /* Retrieve this customer's customers, storing their names
          and the percentages the customer sells to them */
-      var curr_down_down_ids = graph.customers
-        .filter(ind => ind.id == customer)[0];
-      new_element.downstream_customers = curr_down_down_ids.customers;
-      new_element.downstream_percentages = curr_down_down_ids.percentages;
+      let curr_down_down_ids = graph.customers
+        .filter(ind => ind.id === customer)[0];
+      new_customer_element.downstream_customers = curr_down_down_ids.customers;
+      new_customer_element.downstream_percentages = curr_down_down_ids.percentages;
 
       // Add the object for this customer to the current_nodes array
-      current_nodes.push(new_element);
+      current_nodes.push(new_customer_element);
 
       // Increment the index for the "customer" group
       customer_index += 1;
     }
   }
 
-  // Print the current_nodes array to the console
-  console.log(current_nodes);
-
   /* Create a linear scale for the supplier industries,
      which will determine their horizontal placement */
-  var upstream_scale = d3.scaleLinear()
+  let upstream_scale = d3.scaleLinear()
     .domain([0, supplier_index-1])
     .range([-50*supplier_index, 50*supplier_index]);
 
   /* Create a linear scale for the customer industries,
      which will determine their horizontal placement */
-  var downstream_scale = d3.scaleLinear()
+  let downstream_scale = d3.scaleLinear()
     .domain([0, customer_index-1])
     .range([-50*customer_index, 50*customer_index]);
 
   /* Create a linear scale for industries in the "both" group,
      which will determine their vertical placement */
-  var both_scale = d3.scaleLinear()
+  let both_scale = d3.scaleLinear()
     .domain([0, both_index-1])
     .range([-15*both_index, 15*both_index]);
 
@@ -398,12 +429,12 @@ function display_nodes(graph) {
      *** */
 
   // Initialize the current_nodes_2nd array
-  var current_nodes_2nd = []
+  let current_nodes_2nd = []
 
   /* Initialize indices to track the horizontal (h_index) and
      vertical (v_index) placement of each second-degree supplier */
-  var h_index = 0;
-  var v_index = 0;
+  let h_index = 0;
+  let v_index = 0;
 
   // Loop through the array of current suppliers
   for(const supplier of upstream_ids) {
@@ -416,23 +447,23 @@ function display_nodes(graph) {
     }
 
     // Extract the array of this supplier's suppliers
-    var curr_up_up_ids = graph.suppliers
-      .filter(ind => ind.id == supplier)[0].suppliers;
+    let curr_up_up_ids = graph.suppliers
+      .filter(ind => ind.id === supplier)[0].suppliers;
 
     // Loop through the supplier's suppliers
     v_index = 0;
     for(const up_up of curr_up_up_ids) {
 
       // Create a new object for this second-degree supplier
-      var new_element = {};
-      new_element.side = "upstream";
-      new_element.node_1st = supplier;
-      new_element.h_index = h_index;
-      new_element.v_index = v_index;
-      new_element.name = up_up;
+      let new_supplier_2nd_element = {};
+      new_supplier_2nd_element.side = "upstream";
+      new_supplier_2nd_element.node_1st = supplier;
+      new_supplier_2nd_element.h_index = h_index;
+      new_supplier_2nd_element.v_index = v_index;
+      new_supplier_2nd_element.name = up_up;
 
       // Add the object to the current_nodes_2nd array
-      current_nodes_2nd.push(new_element);
+      current_nodes_2nd.push(new_supplier_2nd_element);
 
       // Increment the vertical index
       v_index += 1;
@@ -456,23 +487,23 @@ function display_nodes(graph) {
     }
 
     // Extract the array of this customer's customers
-    var curr_down_down_ids = graph.customers
-      .filter(ind => ind.id == customer)[0].customers;
+    let curr_down_down_ids = graph.customers
+      .filter(ind => ind.id === customer)[0].customers;
 
     // Loop through the customer's customers
     v_index = 0;
     for(const down_down of curr_down_down_ids) {
 
       // Create a new object for this second-degree customer
-      var new_element = {};
-      new_element.side = "downstream";
-      new_element.node_1st = customer;
-      new_element.h_index = h_index;
-      new_element.v_index = v_index;
-      new_element.name = down_down;
+      let new_customer_2nd_element = {};
+      new_customer_2nd_element.side = "downstream";
+      new_customer_2nd_element.node_1st = customer;
+      new_customer_2nd_element.h_index = h_index;
+      new_customer_2nd_element.v_index = v_index;
+      new_customer_2nd_element.name = down_down;
 
       // Add the object to the current_nodes_2nd array
-      current_nodes_2nd.push(new_element);
+      current_nodes_2nd.push(new_customer_2nd_element);
 
       // Increment the vertical index
       v_index += 1;
@@ -483,9 +514,6 @@ function display_nodes(graph) {
     h_index += 1;
 
   }
-
-  // Print the current_nodes_2nd array to the console
-  console.log(current_nodes_2nd);
 
   /* Enter/update/exit logic for the second-degree suppliers and
      customers (including their edges); each second-degree data
@@ -500,13 +528,15 @@ function display_nodes(graph) {
 
         /* Create new groups for the enter selection and
            set their respective positions */
-        var new_group = enter.append("g")
+        let new_group = enter.append("g")
           .attr("transform", (d,i) => {
             switch(d.side) {
               case "upstream":
                 return "translate(" + (focus_x + upstream_scale(d.h_index)) + "," + (supplier_y - 20 - 30*(d.v_index+1)) + ")";
               case "downstream":
                 return "translate(" + (focus_x + downstream_scale(d.h_index)) + "," + (customer_y + 20 + 30*(d.v_index+1)) + ")";
+              default:
+                return "translate(0,0)";
             }
           });
 
@@ -549,6 +579,8 @@ function display_nodes(graph) {
                 return "translate(" + (focus_x + upstream_scale(d.h_index)) + "," + (supplier_y - 20 - 30*(d.v_index+1)) + ")";
               case "downstream":
                 return "translate(" + (focus_x + downstream_scale(d.h_index)) + "," + (customer_y + 20 + 30*(d.v_index+1)) + ")";
+              default:
+                return "translate(0,0)";
             }
           });
 
@@ -558,7 +590,7 @@ function display_nodes(graph) {
 
   // Add/update/remove the first-degree supplier edges
   upstream_links.selectAll("line")
-    .data(current_nodes.filter(ind => ind.group == "supplier"))
+    .data(current_nodes.filter(ind => ind.group === "supplier"))
     .join("line")
       .attr("stroke", "#999")
       .attr("stroke-width", 1.5)
@@ -571,7 +603,7 @@ function display_nodes(graph) {
 
   // Add/update/remove the first-degree customer edges
   downstream_links.selectAll("line")
-    .data(current_nodes.filter(ind => ind.group == "customer"))
+    .data(current_nodes.filter(ind => ind.group === "customer"))
     .join("line")
       .attr("stroke", "#999")
       .attr("stroke-width", 1.5)
@@ -584,16 +616,16 @@ function display_nodes(graph) {
 
   // Add/update/remove the edges for the "both" industries
   both_links.selectAll("line")
-    .data(current_nodes.filter(ind => ind.group == "both"))
+    .data(current_nodes.filter(ind => ind.group === "both"))
     .join("line")
       .attr("stroke", "#999")
       .attr("stroke-width", 1.5)
       .attr("opacity", 0)
       .attr("marker-start", "url(#arrow)")
       .attr("marker-end", "url(#arrow)")
-      .attr("x1", (focus_x + 120))
+      .attr("x1", (focus_x + 80))
       .attr("y1", (d,i) => (focus_y + both_scale(d.index)))
-      .attr("x2", (focus_x + 220))
+      .attr("x2", (focus_x + 160))
       .attr("y2", (d,i) => (focus_y + both_scale(d.index)));
 
   /* Enter/update/exit logic for the first-degree suppliers and
@@ -609,7 +641,7 @@ function display_nodes(graph) {
 
         /* Create new groups for the enter selection
            and set their respective positions */
-        var new_group = enter.append("g")
+        let new_group = enter.append("g")
           .attr("transform", (d,i) => {
             switch(d.group) {
               case "focus":
@@ -618,7 +650,7 @@ function display_nodes(graph) {
                 return "translate(" + (focus_x + upstream_scale(d.index)) + "," + supplier_y + ")";
               case "customer":
                 return "translate(" + (focus_x + downstream_scale(d.index)) + "," + customer_y + ")";
-              case "both":
+              default:
                 return "translate(" + both_x + "," + (focus_y + both_scale(d.index)) + ")";
             }
           });
@@ -644,7 +676,7 @@ function display_nodes(graph) {
                 return supplier_color;
               case "customer":
                 return customer_color;
-              case "both":
+              default:
                 return both_color;
             }
           })
@@ -678,7 +710,7 @@ function display_nodes(graph) {
                 hover.select("rect").attr("height", 50);
                 hover.select(".hover_detail2").text("");
                 break;
-              case "both":
+              default:
                 hover.select("rect").attr("height", 70);
                 hover.select(".hover_detail2").text(d.detail2);
                 break;
@@ -694,10 +726,10 @@ function display_nodes(graph) {
             /* Retrieve the mouse coordinates and calculate the
                hover box's x coordinate so that the box does not
                go outside of the svg container */
-            var coords = d3.pointer(e, svg);
-            var box_x = Math.min(coords[0] - hover_adjustX + 10,
-              svg.attr("width") - hover.select("rect").attr("width") - 10);
-            var box_y = coords[1] - hover_adjustY + 10;
+            let coords = d3.pointer(e, svgNetwork);
+            let box_x = Math.min(coords[0] - hover_network_adjustX + 10,
+              svgNetwork.attr("width") - hover.select("rect").attr("width") - 10);
+            let box_y = coords[1] - hover_network_adjustY + 10;
 
             // Set the position of the hover box and make it visible
             hover
@@ -717,40 +749,33 @@ function display_nodes(graph) {
             /* Retrieve the mouse coordinates and calculate the
                hover box's x coordinate so that the box does not
                go outside of the svg container */
-            var coords = d3.pointer(e, svg);
-            var box_x = Math.min(coords[0] - hover_adjustX + 10,
-              svg.attr("width") - hover.select("rect").attr("width") - 10);
-            var box_y = coords[1] - hover_adjustY + 10;
+            let coords = d3.pointer(e, svgNetwork);
+            let box_x = Math.min(coords[0] - hover_network_adjustX + 10,
+              svgNetwork.attr("width") - hover.select("rect").attr("width") - 10);
+            let box_y = coords[1] - hover_network_adjustY + 10;
 
             // Set the new position of the hover box
             hover.attr("transform", "translate(" + box_x + "," + box_y + ")");
 
           });
 
+        new_group.append("rect")
+          .attr("class", "white_background_rect")
+          .attr("x", -50)
+          .attr("y", -11)
+          .attr("width", 100)
+          .attr("height", 20)
+          .attr("fill", "white")
+          .attr("opacity", 0.7);
+
         // Add the text label for each industry
         new_group.append("text")
           .text(function(d) {
-            return d.id;
+            return d.name.length <= 18 ? d.name : d.name.substring(0, 18) + "...";
           })
           .attr("fill-opacity", 0)
-          .attr('x', (d,i) => {
-            switch(d.group) {
-              case "focus":
-                return 40;
-              default:
-                return 25;
-            }
-          })
-          .attr('y', (d,i) => {
-            switch(d.group) {
-              case "focus":
-                return 0;
-              case "supplier":
-                return -10;
-              case "customer":
-                return 10;
-            }
-          });
+          .attr('x', (d) => -(calculate_text_width(d.name.length <= 18 ? d.name : d.name.substring(0, 18) + "...")/2))
+          .attr('y', 2);
 
         // Create the vertical line for each industry
         new_group.append("line")
@@ -773,6 +798,8 @@ function display_nodes(graph) {
                 return -20;
               case "customer":
                 return 20;
+              default:
+                return 0;
             }
           })
           .attr("x2", 0)
@@ -784,6 +811,8 @@ function display_nodes(graph) {
                 return -20 + (-30*d.upstream_suppliers.length);
               case "customer":
                 return 20 + (30*d.downstream_customers.length);
+              default:
+                return 0;
             }
           });
 
@@ -812,7 +841,7 @@ function display_nodes(graph) {
                 return "translate(" + (focus_x + upstream_scale(d.index)) + "," + supplier_y + ")";
               case "customer":
                 return "translate(" + (focus_x + downstream_scale(d.index)) + "," + customer_y + ")";
-              case "both":
+              default:
                 return "translate(" + both_x + "," + (focus_y + both_scale(d.index)) + ")";
           }});
 
@@ -834,7 +863,7 @@ function display_nodes(graph) {
                 return supplier_color;
               case "customer":
                 return customer_color;
-              case "both":
+              default:
                 return both_color;
             }
           });
@@ -850,6 +879,8 @@ function display_nodes(graph) {
                 return -20;
               case "customer":
                 return 20;
+              default:
+                return 0;
             }
           })
           .attr("x2", 0)
@@ -861,6 +892,8 @@ function display_nodes(graph) {
                 return -20 + (-30*d.upstream_suppliers.length);
               case "customer":
                 return 20 + (30*d.downstream_customers.length);
+              default:
+                return 0;
             }
           })
           .style("stroke", (d,i) => {
@@ -873,25 +906,9 @@ function display_nodes(graph) {
           });
 
         // Update the text names using transition t
-        update.select("text").transition(t)
-          .attr('x', (d,i) => {
-            switch(d.group) {
-              case "focus":
-                return 40;
-              default:
-                return 25;
-            }
-          })
-          .attr('y', (d,i) => {
-            switch(d.group) {
-              case "focus":
-                return 0;
-              case "supplier":
-                return -10;
-              case "customer":
-                return 10;
-            }
-          });
+        /*update.select("text").transition(t)
+          .attr('x', -50)
+          .attr('y', 0);*/
 
       },
       exit => exit.remove()
@@ -922,11 +939,9 @@ function display_nodes(graph) {
       .attr("fill-opacity", 1);
 
     // Call the function to update/display the beeswarm chart
-    display_beeswarm(graph, upstream_ids, downstream_ids, t);
+    display_beeswarm(graph, upstream_ids, downstream_ids, t3);
 
 }
-
-
 
 /* FUNCTION: initialize_beeswarm(graph)
    This function takes the JSON graph data and initializes the
@@ -938,27 +953,29 @@ function initialize_beeswarm(graph) {
   /* Create a linear scale for the industries in the
      beeswarm plot, which will determine their
      vertical positions */
-  var yScale = d3.scaleLinear().domain([4.5, 1]).range([0, beeswarm_y_range]);
+  let yScale = d3.scaleLinear().domain([4.5, 1]).range([0, beeswarm_y_range]);
 
-  // Create the vertical axis for the plot
-  beeswarm_area.append("g")
-    .attr("transform",
-      "translate(" + (beeswarm_x + 120) + "," + (focus_y - beeswarm_y_range/2) + ")")
-    .call(d3.axisRight(yScale));
-
-  // Create the title for the plot
+  // Create the top label for the plot
   beeswarm_area.append("text")
     .attr("transform",
-      "translate(" + beeswarm_x + "," + (focus_y - beeswarm_y_range/2 - 30) + ")")
+      "translate(" + beeswarm_x + "," + (beeswarm_y - beeswarm_y_range/2 - 30) + ")")
     .attr("text-anchor", "middle")
     .attr("fill", "#555")
-    .text("upstreamness");
+    .text("upstream");
+
+  // Create the bottom label for the plot
+  beeswarm_area.append("text")
+    .attr("transform",
+      "translate(" + beeswarm_x + "," + (beeswarm_y + beeswarm_y_range/2 + 30) + ")")
+    .attr("text-anchor", "middle")
+    .attr("fill", "#555")
+    .text("downstream");
 
   /* Set up a force simulation to determine the placement
      of the industries in the plot */
-  var simulation = d3.forceSimulation(graph.nodes)
+  let simulation = d3.forceSimulation(graph.nodes)
     .force('charge', d3.forceManyBody().strength(15))
-    .force('center', d3.forceCenter(beeswarm_x, focus_y))
+    .force('center', d3.forceCenter(beeswarm_x, beeswarm_y))
     .force('x', d3.forceX().x(function(d) {
       return 0;
     }))
@@ -972,11 +989,9 @@ function initialize_beeswarm(graph) {
 
   /* Run the simulation 300 times to determine the
      positions, which will remain static */
-  for (var i = 0; i < 300; ++i) simulation.tick();
+  for (let i = 0; i < 300; ++i) simulation.tick();
 
 }
-
-
 
 /* FUNCTION: initialize_beeswarm(graph)
    This function takes the JSON graph data, the arrays of the
@@ -999,7 +1014,7 @@ function display_beeswarm(graph, upstream_ids, downstream_ids, t) {
       else if(downstream_ids.includes(id)) {
         return customer_color;
       }
-      else if(id == focus_industry) {
+      else if(id === focus_industry) {
         return focus_color;
       }
       else {
@@ -1046,26 +1061,26 @@ function display_beeswarm(graph, upstream_ids, downstream_ids, t) {
               /* Set the hover box's width depending on whichever
                  line in the box is the longest; set its height
                  to a constant as it will always have two lines */
-              hover.select("rect").attr("width",
+              hoverBeeswarm.select("rect").attr("width",
                 Math.max(calculate_text_width(d.name + " (" + d.id + ")"),
                          calculate_text_width("Upstreamness: " + d.upstreamness)) + 20);
-              hover.select("rect").attr("height", 50);
+              hoverBeeswarm.select("rect").attr("height", 50);
 
               // Set the hover box's content
-              hover.select(".hover_indname").text(d.name + " (" + d.id + ")");
-              hover.select(".hover_detail1").text("Upstreamness: " + d.upstreamness);
-              hover.select(".hover_detail2").text("");
+              hoverBeeswarm.select(".hover_indname").text(d.name + " (" + d.id + ")");
+              hoverBeeswarm.select(".hover_detail1").text("Upstreamness: " + d.upstreamness);
+              hoverBeeswarm.select(".hover_detail2").text("");
 
               /* Retrieve the mouse coordinates and calculate the
                  hover box's x coordinate so that the box does not
                  go outside of the svg container */
-              var coords = d3.pointer(e, svg);
-              var box_x = Math.min(coords[0] - hover_adjustX + 10,
-                svg.attr("width") - hover.select("rect").attr("width") - 10);
-              var box_y = coords[1] - hover_adjustY + 10;
+              let coords = d3.pointer(e, svgBeeswarm);
+              let box_x = Math.min(coords[0] - hover_beeswarm_adjustX + 10,
+                svgBeeswarm.attr("width") - hoverBeeswarm.select("rect").attr("width") - 10);
+              let box_y = coords[1] - hover_beeswarm_adjustY + 10;
 
               // Set the position of the hover box and make it visible
-              hover
+              hoverBeeswarm
                 .attr("transform", "translate(" + box_x + "," + box_y + ")")
                 .attr("opacity", 0.9);
 
@@ -1074,7 +1089,7 @@ function display_beeswarm(graph, upstream_ids, downstream_ids, t) {
 
               /* If the mouse goes outside of the industry's circle,
                  make the hover box invisible */
-              hover.attr("opacity", 0);
+              hoverBeeswarm.attr("opacity", 0);
 
             })
             .on("mousemove", (e,d) => {
@@ -1082,13 +1097,13 @@ function display_beeswarm(graph, upstream_ids, downstream_ids, t) {
               /* Retrieve the mouse coordinates and calculate the
                  hover box's x coordinate so that the box does not
                  go outside of the svg container */
-              var coords = d3.pointer(e, svg);
-              var box_x = Math.min(coords[0] - hover_adjustX + 10,
-                svg.attr("width") - hover.select("rect").attr("width") - 10);
-              var box_y = coords[1] - hover_adjustY + 10;
+              let coords = d3.pointer(e, svgBeeswarm);
+              let box_x = Math.min(coords[0] - hover_beeswarm_adjustX + 10,
+                svgBeeswarm.attr("width") - hoverBeeswarm.select("rect").attr("width") - 10);
+              let box_y = coords[1] - hover_beeswarm_adjustY + 10;
 
               // Update the position of the hover box
-              hover.attr("transform", "translate(" + box_x + "," + box_y + ")");
+              hoverBeeswarm.attr("transform", "translate(" + box_x + "," + box_y + ")");
 
             });
 
@@ -1109,8 +1124,6 @@ function display_beeswarm(graph, upstream_ids, downstream_ids, t) {
       );
 
 }
-
-
 
 /* FUNCTION: calculate_text_width(text)
    This function takes a string and returns the width of
