@@ -3,10 +3,11 @@
    visualization using D3.js v7. It requires a JSON data
    file called production_network.json and assumes the
    presence of (1) an HTML SVG element to contain the
-   visualization and (2) a simple CSS file that specifies
-   the text style, the :hover pseudo-classes for the
-   industry circles, and the font weight for the industry
-   name in the hover box. */
+   network visualization, (2) an HTML SVG element to contain
+   the beeswarm visualization, and (3) a simple CSS file that
+   specifies, among other items, the text style, the :hover
+   pseudo-classes for the industry circles, and the font
+   weight for the industry name in the hover box. */
 
 
 // Store references to the svg elements
@@ -14,16 +15,16 @@ var svgNetwork = d3.select("svg.svg_network"),
     svgBeeswarm = d3.select("svg.svg_beeswarm");
 
 /* Store the x and y coordinates of the svg elements,
-   which allows the position of their respective hover
-   boxes to be adjusted accordingly */
-var svgEl_network = document.querySelector("svg.svg_network");
-var svgRect_network = svgEl_network.getBoundingClientRect();
-var hover_network_adjustX = svgRect_network.x + window.scrollX;
-var hover_network_adjustY = svgRect_network.y + window.scrollY;
-var svgEl_beeswarm = document.querySelector("svg.svg_beeswarm");
-var svgRect_beeswarm = svgEl_beeswarm.getBoundingClientRect();
-var hover_beeswarm_adjustX = svgRect_beeswarm.x + window.scrollX;
-var hover_beeswarm_adjustY = svgRect_beeswarm.y + window.scrollY;
+   shifted by the window scroll position, which allows
+   the location of the hover boxes to be adjusted accordingly */
+var svgRectNetwork = document.querySelector("svg.svg_network")
+                             .getBoundingClientRect(),
+    hover_network_adjustX = svgRectNetwork.x + window.scrollX,
+    hover_network_adjustY = svgRectNetwork.y + window.scrollY;
+var svgRectBeeswarm = document.querySelector("svg.svg_beeswarm")
+                              .getBoundingClientRect(),
+    hover_beeswarm_adjustX = svgRectBeeswarm.x + window.scrollX,
+    hover_beeswarm_adjustY = svgRectBeeswarm.y + window.scrollY;
 
 /* Set the x and y coordinates of the focus industry,
    around which everything in the main visualization
@@ -34,7 +35,7 @@ var focus_y = 350;
 // Set the x coordinate of the industries in the "both" group
 var both_x = 560;
 
-// Set the x and coordinates of the beeswarm plot
+// Set the x and y coordinates of the beeswarm plot
 var beeswarm_x = 100;
 var beeswarm_y = 250;
 
